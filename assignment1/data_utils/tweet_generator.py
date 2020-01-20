@@ -16,8 +16,8 @@ def generate():
 
 def get_next_tweet():
     user_id = random.randint(1, 10000)  # Ten Thousand Users
-    tweet_ts = get_random_date().strftime("%m/%d/%Y, %H:%M:%S")
-    tweet_text = ''.join(random.choices(string.ascii_uppercase, k=140))
+    tweet_ts = get_random_date().strftime("%Y-%m-%d %H:%M:%S")
+    tweet_text = ''.join(random.choices(string.ascii_uppercase, k=139))
     return f'{user_id}, {tweet_ts}, {tweet_text}'
 
 
