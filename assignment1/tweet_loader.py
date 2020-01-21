@@ -3,7 +3,7 @@ import os
 import sys
 import time
 
-sys.path.append(os.path.realpath('.'))
+sys.path.append(os.path.realpath(''))
 from db_utils import DbUtils
 
 
