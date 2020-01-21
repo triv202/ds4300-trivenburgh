@@ -33,4 +33,9 @@ me about 94 days to load all of the tweets into the db. Second, it would signifi
 timeline retrieval query, as the tweet table would be much harder to query against.
 
 3)
+Tweets inserted writing to disk: ~ 18518 tweets/second
+I'm nowhere near optimal performance considering writing to disk is over 1000 times more efficient.
+Likewise, while reading from disk my speed is ~2128 tweets/second, compared to my timeline query which is much much
+slower. It's clear that working with the mysql db is no where near the optimal theoretical performance of my machine.
+
 

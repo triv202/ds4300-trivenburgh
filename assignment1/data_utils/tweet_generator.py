@@ -2,9 +2,11 @@
 import random
 import datetime
 import string
+import time
 
 
 def generate():
+    start_time = time.time()
     results = open('../tweets.txt', 'w')
     count = 0
     while count <= 1000000:
@@ -12,6 +14,7 @@ def generate():
         count+= 1
     else:
         results.close()
+        print("--- %s seconds total ---" % (time.time() - start_time))
 
 
 def get_next_tweet():
