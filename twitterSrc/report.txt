@@ -1,0 +1,41 @@
+README:
+timeline_test.py & tweet_loader.py are simple scripts that can be ran from the command line.
+tweet_loader requires a text file argument, in this case you can use tweets.txt.
+db_utils.py serves as an interface for these scripts to interact with the mysql db.
+setup.sql is a sql script that was also run from the command line to generate the initial db tables.
+The data_utils directory contains scripts to generate both the tweet and follower data.
+
+Report:
+
+Results:
+Tweets inserted: ~ 123 tweets/second
+Timelines retrieved: ~ .41 timelines/second
+
+Hardware:
+CPU Speed: 2.7 GHz
+Cores: 2
+RAM: 8 GB
+
+Data Assumptions:
+# of Tweets: 1,000,000
+# of Users: 10,000
+Tweets per user: random
+Followers per user: random w/ a max of 100
+
+
+Discussion:
+2) The maximum number of followers that I implemented certainly had a positive impact on my
+time line retrieval query times. I thought it would be much slower because I chose to forgo
+any indexing on columns and the db didn't have any foreign keys for relating the two tables.
+I do think that generating 1 billion tweets would be quite an issue. One, simply because it already
+took two and a half hours to load 1 million tweets. At my rate of 123 tweets/second it would take
+me about 94 days to load all of the tweets into the db. Second, it would significantly impact my
+timeline retrieval query, as the tweet table would be much harder to query against.
+
+3)
+Tweets inserted writing to disk: ~ 18518 tweets/second
+I'm nowhere near optimal performance considering writing to disk is over 1000 times more efficient.
+Likewise, while reading from disk my speed is ~2128 tweets/second, compared to my timeline query which is much much
+slower. It's clear that working with the mysql db is no where near the optimal theoretical performance of my machine.
+
+
