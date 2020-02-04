@@ -16,9 +16,9 @@ def retrieve_timelines():
     while time.time() < t_end:
         user_id = random.randint(1, 10000)  # Ten Thousand Users
         if timeline_strategy == "one":
-            db.get_timeline_one(user_id)
+            db.get_timeline(user_id, broadcasted=False)
         elif timeline_strategy == "two":
-            db.get_timeline_two(user_id)
+            db.get_timeline(user_id, broadcasted=True)
         else:
             return print("Error: Specify a valid timeline strategy")
         timeline_count += 1

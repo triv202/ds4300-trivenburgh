@@ -20,12 +20,11 @@ def load_tweets():
     for x in f:
         tweet_args = x.split(",")
         user_id = tweet_args[0].strip()
-        tweet_date_time = tweet_args[1].strip()
         tweet_text = tweet_args[2].strip()
         if insert_option == "one":
-            db.insert_tweet_one(user_id, tweet_date_time, tweet_text)
+            db.insert_tweet(user_id, tweet_text, broadcast=False)
         elif insert_option == "two":
-            db.insert_tweet_two(user_id, tweet_date_time, tweet_text)
+            db.insert_tweet(user_id, tweet_text, broadcast=True)
         else:
             return print("Error: Specify a valid insertion strategy")
         tweet_count += 1

@@ -20,7 +20,7 @@ def generate():
             follower_count -= 1
         for follower_id in follower_id_set:
             if follower_id != user_id_count:  # can't follow yourself
-                db.add_follower(follows_id=user_id_count, follower_id=follower_id)
+                db.add_follower(user_id=user_id_count, follower_id=follower_id)
         user_id_count += 1
 
 
