@@ -1,5 +1,7 @@
 # ds4300-trivenburgh
 
+### Assignment 3 - Answers for part 1 are in the products.sql file
+
 ## Abstract
 The goal of this experiment was to model Twitter's data needs and experiment with strategies to optimize data performance. Tweet data was falsified, written to a file, and loaded into a variety of data stores. Additionally, follower data was similarly mocked. The two main stores were a traditional MySQL database and a local redis store. With the Redis store, two slightly different strategies were implemented. For all three (MySQL and the two redis) tweets were inserted to the store to simulate posting and tweets/second were tracked. Likewise, for each retreiving a user's "timeline" was implemented, as the ten most recent tweets by people they follow. The results were fairly consistent with expectations with a redis strategy optimizing reading of timelines being the most efficient at doing so, and the redis strategy optimizing for easy "tweeting" or inserting being the best at doing so, as well. MySQL did perform better than the second redis strategy for inserts, but did not compete with either redis strategy for timeline reads.
 
